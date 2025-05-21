@@ -1,0 +1,39 @@
+If no adjacent mines:
+
+Mark the cell as 'B'
+
+Enqueue all unrevealed empty ('E') neighbors — the BFS expansion step.
+
+This is where BFS differs from DFS: it explores all these neighbors before moving deeper.
+
+📊 Visualization of BFS
+Imagine clicking a square in a large empty area:
+
+pgsql
+Copy
+Edit
+Click at (5, 5)
+- No adjacent mines → reveal it as 'B'
+- Enqueue all 8 neighbors around (5,5)
+- For each neighbor: check again
+  - If also no mines → enqueue their neighbors
+  - Repeat until the frontier meets numbers or edges
+This spreads outwards in all directions — exactly like BFS exploring a grid.
+
+⏱️ BFS vs DFS in Minesweeper
+BFS	DFS
+Uses a queue	Uses a stack/recursion
+Reveals area level by level	Dives deep into a path
+More memory intensive but safer for large areas	Risk of stack overflow in large games
+
+In this implementation, BFS is chosen to prevent recursion depth issues and ensure level-wise, controlled exploration.
+
+✅ Summary: How It Uses BFS
+A queue is used to track frontier cells.
+
+It checks neighbors and adds them to the queue instead of diving in recursively.
+
+It ensures each cell is visited once using a visited matrix.
+
+It gradually reveals all connected safe areas, one level at a time.
+
