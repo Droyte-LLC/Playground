@@ -1,0 +1,37 @@
+**Use Case: Multi-Cloud Blob Storage Uploads**
+
+We use the Strategy Design Pattern to support uploading blobs to multiple cloud providers while
+maintaining a consistent interface.
+(e.g., AWS S3, Azure Blob Storage, Google Cloud Storage)
+
+While each cloud has:
+
+- Different SDKs
+- Different authentication models
+- Unique response formats (e.g., ETags, version IDs)
+- Varying bucket/container terminology
+
+we benefit by designing a loosely coupled system.
+
+By leveraging the Strategy design pattern, we:
+
+- Eliminate duplicated logic
+- Increase testability
+- Increase maintainability
+- Introduce a cleaner dependency injection system
+- Follow SOLID's Open/Closed principle
+- Provide seperation of concerns, keeping cloud specific logic isolated 
+
+**Project Structure Overview**
+
+Interfaces folder:
+Contains the core interface, ICloudStorageStrategy, which defines a unified contract for uploading files to any cloud provider.
+
+Concretes folder:
+Houses the concrete implementations of ICloudStorageStrategy, one for each cloud vendor (e.g., AzureBlobStorageStrategy, AmazonS3StorageStrategy, GoogleCloudStorageStrategy).
+
+Models folder:
+Includes shared data models such as UploadCloudBlobResult, used to standardize the upload response format across providers.
+
+Config folder:
+Defines CloudStorageConfig, a unified configuration model for initializing cloud strategies, abstracting provider-specific details.

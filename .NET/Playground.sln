@@ -7,6 +7,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MineSweeper", "MineSweeper\
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "PlaygroundConsole", "PlaygroundConsole\PlaygroundConsole.csproj", "{128AA6BC-496A-47B8-86DD-87F906F04600}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "DesignPatterns", "DesignPatterns\DesignPatterns.csproj", "{EB595B0D-D1C9-446A-AA2C-4D2B2EAF84E6}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -41,6 +43,18 @@ Global
 		{128AA6BC-496A-47B8-86DD-87F906F04600}.Release|x64.Build.0 = Release|Any CPU
 		{128AA6BC-496A-47B8-86DD-87F906F04600}.Release|x86.ActiveCfg = Release|Any CPU
 		{128AA6BC-496A-47B8-86DD-87F906F04600}.Release|x86.Build.0 = Release|Any CPU
+		{EB595B0D-D1C9-446A-AA2C-4D2B2EAF84E6}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{EB595B0D-D1C9-446A-AA2C-4D2B2EAF84E6}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{EB595B0D-D1C9-446A-AA2C-4D2B2EAF84E6}.Debug|x64.ActiveCfg = Debug|Any CPU
+		{EB595B0D-D1C9-446A-AA2C-4D2B2EAF84E6}.Debug|x64.Build.0 = Debug|Any CPU
+		{EB595B0D-D1C9-446A-AA2C-4D2B2EAF84E6}.Debug|x86.ActiveCfg = Debug|Any CPU
+		{EB595B0D-D1C9-446A-AA2C-4D2B2EAF84E6}.Debug|x86.Build.0 = Debug|Any CPU
+		{EB595B0D-D1C9-446A-AA2C-4D2B2EAF84E6}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{EB595B0D-D1C9-446A-AA2C-4D2B2EAF84E6}.Release|Any CPU.Build.0 = Release|Any CPU
+		{EB595B0D-D1C9-446A-AA2C-4D2B2EAF84E6}.Release|x64.ActiveCfg = Release|Any CPU
+		{EB595B0D-D1C9-446A-AA2C-4D2B2EAF84E6}.Release|x64.Build.0 = Release|Any CPU
+		{EB595B0D-D1C9-446A-AA2C-4D2B2EAF84E6}.Release|x86.ActiveCfg = Release|Any CPU
+		{EB595B0D-D1C9-446A-AA2C-4D2B2EAF84E6}.Release|x86.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
