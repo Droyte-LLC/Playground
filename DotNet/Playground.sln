@@ -9,9 +9,9 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "PlaygroundConsole", "Playgr
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "DesignPatterns", "DesignPatterns\DesignPatterns.csproj", "{EB595B0D-D1C9-446A-AA2C-4D2B2EAF84E6}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Campaign.API", "Campaign.API\Campaign.API.csproj", "{9A908DBF-A020-4FEC-AC31-C1F2B2A027A3}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Campaigns.API", "Campaigns.API\Campaigns.API.csproj", "{9A908DBF-A020-4FEC-AC31-C1F2B2A027A3}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Campaign.Data", "Campaign.Data\Campaign.Data.csproj", "{9D3D8FDA-E2B6-47F3-A454-463763FAC8FA}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Campaigns.Data", "Campaigns.Data\Campaigns.Data.csproj", "{9D3D8FDA-E2B6-47F3-A454-463763FAC8FA}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
