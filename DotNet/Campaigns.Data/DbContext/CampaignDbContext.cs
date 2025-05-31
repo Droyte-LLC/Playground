@@ -16,10 +16,11 @@ public class CampaignDbContext : Microsoft.EntityFrameworkCore.DbContext
         .WithMany(u => u.Campaigns)
         .HasForeignKey(c => c.OwnerId);
 
-    modelBuilder.Entity<Contribution>()
-        .HasOne(c => c.User)
-        .WithMany(u => u.Contributions)
-        .HasForeignKey(c => c.UserId);
+        modelBuilder.Entity<Contribution>()
+            .HasOne(c => c.User)
+            .WithMany(u => u.Contributions)
+            .HasForeignKey(c => c.UserId)
+            .OnDelete(DeleteBehavior.NoAction); // or DeleteBehavior.NoAction;
 
     modelBuilder.Entity<Contribution>()
         .HasOne(c => c.Campaign)

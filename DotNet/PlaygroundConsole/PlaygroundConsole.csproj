@@ -2,6 +2,7 @@
 
   <ItemGroup>
     <ProjectReference Include="..\MineSweeper\MineSweeper.csproj" />
+    <ProjectReference Include="..\Campaigns.Data\Campaigns.Data.csproj" />
   </ItemGroup>
 
   <PropertyGroup>
