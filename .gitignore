@@ -40,7 +40,7 @@ BundleConfig.cs
 *.db
 
 ## Entity Framework Migrations
-migrations/
+#migrations/
 
 ## NuGet
 *.nupkg

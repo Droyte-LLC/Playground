@@ -1,4 +1,13 @@
-﻿Console.WriteLine("Welcome to PlaygroundConsole, let's play Minesweeper!");
+﻿// Console.WriteLine("Testing CampaignDbContextFactory!");
+
+// var factory = new CampaignDbContextFactory();
+// var context = factory.CreateDbContext(args);
+
+//Console.WriteLine("Connection successful.");
+
+//Console.ReadLine();
+
+Console.WriteLine("Welcome to PlaygroundConsole, let's play Minesweeper!");
 MineSweeperGame sweeperGame = new();
 
 Console.WriteLine("\nGood luck! Try not to hit a mine...");
