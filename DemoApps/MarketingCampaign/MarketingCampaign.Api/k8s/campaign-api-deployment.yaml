@@ -1,0 +1,19 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: campaign-api
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: campaign-api
+  template:
+    metadata:
+      labels:
+        app: campaign-api
+    spec:
+      containers:
+        - name: campaign-api
+          image: gjbaptiste/campaign_api:latest
+          ports:
+            - containerPort: 80
