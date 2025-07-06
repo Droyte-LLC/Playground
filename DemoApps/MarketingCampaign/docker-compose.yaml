@@ -1,0 +1,18 @@
+version: '3.8'
+services:
+  api:
+    build: ./MarketingCampaign.Api
+    container_name: marketing_campaign_api
+    ports:
+      - "5001:8080"
+    depends_on:
+      - postgres
+
+  postgres:
+    image: postgres
+    environment:
+      POSTGRES_USER: campaign
+      POSTGRES_PASSWORD: campaign123
+      POSTGRES_DB: CampaignDb
+    ports:
+      - "5432:5432"

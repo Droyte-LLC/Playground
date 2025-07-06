@@ -1,0 +1,216 @@
+Marketing Campaign Demo: A Full-Stack Project with C#, Angular, Docker, Kubernetes, AWS, and CI/CD
+
+The Marketing Campaign Demo enables users to:
+- Create and schedule marketing campaigns
+- Send emails or SMS via AWS services
+- Store campaign data in PostgreSQL (RDS) and logs in DynamoDB
+- View analytics in an Angular UI
+
+
+🔧 1. Backend API – C# .NET Core Setup
+✅ Steps:
+dotnet new webapi -n MarketingCampaign.Api
+cd MarketingCampaign.Api
+
+
+🐳 2. Docker – Containerizing the App
+- Create Dockerfile in the project root
+- Create docker-compose.yml for multi-container setup
+
+🚀 Build and start all the services defined docker-compose.yaml:
+docker-compose up --build
+Access: http://localhost:5001/api/campaign
+
+☸️ 3. Kubernetes – Running on Local Cluster (Minikube)
+✅ Install Minikube & kubectl
+
+brew install minikube
+brew install kubectl
+
+🔄 Start Minikube
+minikube start
+
+Tag and push Docker Image to Docker Hub
+docker images
+docker tag marketingcampaign_api gjbaptiste/campaign_api:latest
+docker push gjbaptiste/campaign_api:latest
+
+📄 Deployment YAML
+campaign-api-deployment.yaml
+
+📄 Service YAML
+campaign-api-service.yaml
+
+🚀 Deploy
+kubectl apply -f campaign-api-deployment.yaml
+kubectl apply -f campaign-api-service.yaml
+
+Troubleshoot error
+kubectl describe pod campaign-api-5f87bf6454-s58tz
+
+B. Use a Kubernetes image pull secret for private repos:
+bash
+Copy
+Edit
+kubectl create secret docker-registry regcred \
+  --docker-username=gjbaptiste \
+  --docker-password='your-password' \
+  --docker-email='you@example.com'
+
+🔍 Access
+minikube service campaign-api-service
+
+☁️ 4. AWS Integration – Detailed
+🔐 AWS CLI Setup
+bash
+Copy
+Edit
+aws configure
+# Provide: AWS Access Key ID, Secret Access Key, Region
+📥 S3 – Upload Campaign Assets
+C# Code (Amazon SDK):
+bash
+Copy
+Edit
+dotnet add package AWSSDK.S3
+csharp
+Copy
+Edit
+var client = new AmazonS3Client();
+var request = new PutObjectRequest {
+    BucketName = "campaign-assets",
+    Key = "logo.png",
+    FilePath = "/local/path/logo.png"
+};
+await client.PutObjectAsync(request);
+📤 SES – Sending Campaign Emails
+C# Code:
+bash
+Copy
+Edit
+dotnet add package AWSSDK.SimpleEmail
+csharp
+Copy
+Edit
+var sendRequest = new SendEmailRequest {
+    Source = "you@example.com",
+    Destination = new Destination {
+        ToAddresses = new List<string> { "target@example.com" }
+    },
+    Message = new Message {
+        Subject = new Content("Your Campaign"),
+        Body = new Body {
+            Html = new Content("<h1>Hello!</h1>")
+        }
+    }
+};
+var sesClient = new AmazonSimpleEmailServiceClient();
+await sesClient.SendEmailAsync(sendRequest);
+🧪 Must verify sender and recipient emails in sandbox mode.
+
+📊 DynamoDB – Store Campaign Logs
+C# Code:
+bash
+Copy
+Edit
+dotnet add package AWSSDK.DynamoDBv2
+csharp
+Copy
+Edit
+var client = new AmazonDynamoDBClient();
+var table = Table.LoadTable(client, "CampaignLogs");
+var doc = new Document();
+doc["CampaignId"] = "123";
+doc["Clicks"] = 30;
+await table.PutItemAsync(doc);
+🛢️ RDS – PostgreSQL Campaign Storage
+Provision RDS with PostgreSQL via Console or Terraform.
+
+Get hostname, port, and credentials.
+
+Connect from app:
+
+json
+Copy
+Edit
+"ConnectionStrings": {
+  "DefaultConnection": "Host=your-rds-endpoint;Username=postgres;Password=yourpass;Database=CampaignDb"
+}
+C# DB Context:
+csharp
+Copy
+Edit
+services.AddDbContext<AppDbContext>(options =>
+    options.UseNpgsql(Configuration.GetConnectionString("DefaultConnection")));
+🏗️ Infrastructure as Code (Terraform)
+Example: RDS + S3
+hcl
+Copy
+Edit
+provider "aws" {
+  region = "us-east-1"
+}
+
+resource "aws_s3_bucket" "campaign_assets" {
+  bucket = "campaign-assets"
+}
+
+resource "aws_db_instance" "campaign_rds" {
+  engine = "postgres"
+  instance_class = "db.t3.micro"
+  allocated_storage = 20
+  name = "CampaignDb"
+  username = "postgres"
+  password = "password"
+}
+🎯 CI/CD with GitHub Actions
+Example .github/workflows/deploy.yml:
+yaml
+Copy
+Edit
+name: Build and Deploy
+
+on:
+  push:
+    branches: [main]
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v2
+      - name: Build .NET App
+        run: dotnet build
+
+      - name: Build Docker image
+        run: docker build -t yourdockerhub/campaign-api .
+
+      - name: Push to DockerHub
+        run: |
+          echo ${{ secrets.DOCKER_PASSWORD }} | docker login -u ${{ secrets.DOCKER_USERNAME }} --password-stdin
+          docker push yourdockerhub/campaign-api
+🧠 Bonus: Testing AWS Locally
+Use LocalStack to simulate AWS services (S3, DynamoDB, SES) for local dev.
+
+bash
+Copy
+Edit
+docker run -d -p 4566:4566 -p 4571:4571 localstack/localstack
+✅ Summary Checklist
+Feature	Tool
+API Backend	.NET Core, C#
+Frontend	Angular, TypeScript
+Containerization	Docker
+Orchestration	Kubernetes (Minikube or EKS)
+CI/CD	GitHub Actions
+Storage	RDS (Postgres), DynamoDB, S3
+Messaging	SES, SNS
+Infra as Code	Terraform
+Local Dev AWS	LocalStack
+
+
+
+
+
+
+
