@@ -10,11 +10,11 @@ Goal:
 ✅ Syntax & Data Types Translated from C# 
 Key Translations:
 
-C#	Python
-int x = 5;	x = 5
-if (x > 5) { ... }	if x > 5: (no braces!)
-for (int i = 0; ...)	for i in range(n):
-Console.WriteLine(...)	print(...)
+C#	----->  Python
+int x = 5;  ----->  x = 5
+if (x > 5) { ... } 	----->  if x > 5: (no braces!)
+for (int i = 0; ...)  ----->  for i in range(n):
+Console.WriteLine(...)  ----->  print(...)
 
 
 ✅ Focus: Data Structures – Lists, Dicts, Sets, Tuples
@@ -29,6 +29,7 @@ Class definitions
 __init__ constructor
 
 Instance vs class variables
+- In Python, class variables are the equivalent of static members in C#
 
 Inheritance, overriding
 
@@ -149,3 +150,9 @@ Use Python to call APIs, process files, or create classes
 Explain how Python handles types, memory, and packages
 
 Solve LeetCode problems in Python confidently
+
+## Kaggle Integration
+
+---
+
+pip3 install kaggle
