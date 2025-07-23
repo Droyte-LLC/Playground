@@ -1,3 +1,5 @@
+## Environment Setup Tips for Java
+
 // check installed java versions
 /usr/libexec/java_home -V
 

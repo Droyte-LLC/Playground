@@ -32,7 +32,7 @@ public class ArrayListDemo {
 
         // 7. Update an element
         fruits.set(1, "Pineapple");  // Replaces Mango with Pineapple
-        System.out.println(String.format("After updating: %s", fruits));
+        System.out.println(String.format("After updating index %d: %s", 1, fruits));
 
         // 8. Size of the ArrayList
         System.out.println(String.format("Total fruits: %s", fruits.size()));
