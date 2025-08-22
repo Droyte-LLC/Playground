@@ -1,0 +1,22 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: risk-service
+spec:
+  replicas: ${REPLICAS}
+  selector:
+    matchLabels:
+      app: risk-service
+  template:
+    metadata:
+      labels:
+        app: risk-service
+    spec:
+      containers:
+      - name: risk-service
+        image: "${IMAGE_URL}"
+        ports:
+        - containerPort: ${APP_PORT}
+        env:
+        - name: PORT
+          value: "${APP_PORT}"

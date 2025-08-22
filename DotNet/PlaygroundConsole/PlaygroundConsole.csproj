@@ -3,6 +3,7 @@
   <ItemGroup>
     <ProjectReference Include="..\MineSweeper\MineSweeper.csproj" />
     <ProjectReference Include="..\Campaigns.Data\Campaigns.Data.csproj" />
+    <ProjectReference Include="..\Interviews.Coding\Interviews.Coding.csproj" />
   </ItemGroup>
 
   <PropertyGroup>

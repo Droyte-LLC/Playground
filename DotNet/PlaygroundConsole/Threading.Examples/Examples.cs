@@ -1,4 +1,5 @@
 
+namespace PlaygroundConsole.ThreadingExamples;
 
 public class Example1
 {
