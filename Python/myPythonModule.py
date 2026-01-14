@@ -24,6 +24,7 @@ class Animal:
   def speak(self):
     print("The animal makes a sound")
 
+# Inheritance
 class Dog(Animal):
   def bark(self):  # New method specific to Dog
     print("It Barks")
