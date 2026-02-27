@@ -1,0 +1,262 @@
+{
+  "type": "folder",
+  "value": "",
+  "description": "SkillVector – AI-powered job alignment and gap analysis platform.",
+  "children": [
+    {
+      "type": "folder",
+      "value": "api",
+      "children": [
+        {
+          "type": "folder",
+          "value": "v1",
+          "children": [
+            { "type": "file", "value": "routes.py" },
+            { "type": "file", "value": "schemas.py" },
+            { "type": "file", "value": "dependencies.py" }
+          ]
+        },
+        {
+          "type": "folder",
+          "value": "middleware",
+          "children": [{ "type": "file", "value": "auth_middleware.py" }]
+        },
+        { "type": "file", "value": "main.py" }
+      ]
+    },
+
+    {
+      "type": "folder",
+      "value": "application",
+      "children": [
+        {
+          "type": "folder",
+          "value": "workflows",
+          "children": [
+            { "type": "file", "value": "gap_analysis_workflow.py" },
+            { "type": "file", "value": "project_generation_workflow.py" },
+            { "type": "file", "value": "base_workflow.py" }
+          ]
+        },
+        {
+          "type": "folder",
+          "value": "use_cases",
+          "children": [
+            { "type": "file", "value": "create_user.py" },
+            { "type": "file", "value": "analyze_profile.py" },
+            { "type": "file", "value": "generate_plan.py" }
+          ]
+        },
+        {
+          "type": "folder",
+          "value": "services",
+          "children": [{ "type": "file", "value": "orchestration_service.py" }]
+        },
+        {
+          "type": "folder",
+          "value": "dto",
+          "children": [{ "type": "file", "value": "user_dto.py" }]
+        }
+      ]
+    },
+
+    {
+      "type": "folder",
+      "value": "domain",
+      "children": [
+        {
+          "type": "folder",
+          "value": "entities",
+          "children": [
+            { "type": "file", "value": "user.py" },
+            { "type": "file", "value": "skill_vector.py" },
+            { "type": "file", "value": "gap_analysis.py" }
+          ]
+        },
+        {
+          "type": "folder",
+          "value": "value_objects",
+          "children": [{ "type": "file", "value": "skill_score.py" }]
+        },
+        {
+          "type": "folder",
+          "value": "repositories",
+          "children": [{ "type": "file", "value": "user_repository.py" }]
+        },
+        {
+          "type": "folder",
+          "value": "services",
+          "children": [{ "type": "file", "value": "gap_service.py" }]
+        },
+        { "type": "file", "value": "exceptions.py" }
+      ]
+    },
+
+    {
+      "type": "folder",
+      "value": "ai",
+      "children": [
+        {
+          "type": "folder",
+          "value": "agents",
+          "children": [
+            { "type": "file", "value": "gap_agent.py" },
+            { "type": "file", "value": "project_agent.py" }
+          ]
+        },
+        {
+          "type": "folder",
+          "value": "prompts",
+          "children": [
+            { "type": "file", "value": "gap_prompt.txt" },
+            { "type": "file", "value": "project_prompt.txt" }
+          ]
+        },
+        {
+          "type": "folder",
+          "value": "embeddings",
+          "children": [{ "type": "file", "value": "embedding_service.py" }]
+        },
+        {
+          "type": "folder",
+          "value": "memory",
+          "children": [{ "type": "file", "value": "memory_store.py" }]
+        },
+        {
+          "type": "folder",
+          "value": "evaluators",
+          "children": [{ "type": "file", "value": "agent_evaluator.py" }]
+        }
+      ]
+    },
+
+    {
+      "type": "folder",
+      "value": "database",
+      "children": [
+        {
+          "type": "folder",
+          "value": "models",
+          "children": [{ "type": "file", "value": "user_model.py" }]
+        },
+        {
+          "type": "folder",
+          "value": "repositories",
+          "children": [{ "type": "file", "value": "user_repository_impl.py" }]
+        },
+        {
+          "type": "folder",
+          "value": "migrations",
+          "children": []
+        },
+        { "type": "file", "value": "session.py" }
+      ]
+    },
+
+    {
+      "type": "folder",
+      "value": "infrastructure",
+      "children": [
+        {
+          "type": "folder",
+          "value": "config",
+          "children": [{ "type": "file", "value": "settings.py" }]
+        },
+        {
+          "type": "folder",
+          "value": "logging",
+          "children": [{ "type": "file", "value": "logger.py" }]
+        },
+        {
+          "type": "folder",
+          "value": "storage",
+          "children": [
+            { "type": "file", "value": "storage_interface.py" },
+            { "type": "file", "value": "aws_storage.py" },
+            { "type": "file", "value": "gcp_storage.py" },
+            { "type": "file", "value": "azure_storage.py" }
+          ]
+        },
+        {
+          "type": "folder",
+          "value": "messaging",
+          "children": [
+            { "type": "file", "value": "messaging_interface.py" },
+            { "type": "file", "value": "aws_sns_sqs.py" },
+            { "type": "file", "value": "gcp_pubsub.py" },
+            { "type": "file", "value": "azure_servicebus.py" }
+          ]
+        },
+        {
+          "type": "folder",
+          "value": "email",
+          "children": [{ "type": "file", "value": "email_client.py" }]
+        },
+        {
+          "type": "folder",
+          "value": "external_apis",
+          "children": [{ "type": "file", "value": "linkedin_client.py" }]
+        }
+      ]
+    },
+
+    {
+      "type": "folder",
+      "value": "observability",
+      "children": [
+        { "type": "file", "value": "metrics.py" },
+        { "type": "file", "value": "tracing.py" },
+        { "type": "file", "value": "alerts.py" }
+      ]
+    },
+
+    { "type": "folder", "value": "terraform", "children": [] },
+
+    {
+      "type": "folder",
+      "value": "scripts",
+      "children": [
+        { "type": "file", "value": "deploy.sh" },
+        { "type": "file", "value": "migrate.sh" }
+      ]
+    },
+
+    {
+      "type": "folder",
+      "value": "tests",
+      "children": [
+        { "type": "folder", "value": "unit", "children": [] },
+        { "type": "folder", "value": "integration", "children": [] },
+        { "type": "folder", "value": "e2e", "children": [] }
+      ]
+    },
+
+    {
+      "type": "folder",
+      "value": "docker",
+      "children": [
+        { "type": "file", "value": "Dockerfile" },
+        { "type": "file", "value": "docker-compose.yml" }
+      ]
+    },
+
+    {
+      "type": "folder",
+      "value": ".github",
+      "children": [
+        {
+          "type": "folder",
+          "value": "workflows",
+          "children": [
+            { "type": "file", "value": "ci.yml" },
+            { "type": "file", "value": "cd.yml" }
+          ]
+        }
+      ]
+    },
+
+    { "type": "file", "value": "pyproject.toml" },
+    { "type": "file", "value": "Makefile" },
+    { "type": "file", "value": "README.md" }
+  ]
+}
