@@ -1,7 +1,7 @@
 {
   "type": "folder",
   "value": "",
-  "description": "SkillVector – AI-powered job alignment and gap analysis platform.",
+  "description": "SkillVector – AI-powered job alignment, gap analysis and upskill platform.",
   "children": [
     {
       "type": "folder",
@@ -24,7 +24,6 @@
         { "type": "file", "value": "main.py" }
       ]
     },
-
     {
       "type": "folder",
       "value": "application",
@@ -56,10 +55,142 @@
           "type": "folder",
           "value": "dto",
           "children": [{ "type": "file", "value": "user_dto.py" }]
+        },
+        {
+          "type": "folder",
+          "value": "frontend",
+          "description": "React + TypeScript client (feature-based architecture)",
+          "children": [
+            {
+              "type": "folder",
+              "value": "src",
+              "children": [
+                {
+                  "type": "folder",
+                  "value": "app",
+                  "children": [
+                    { "type": "file", "value": "App.tsx" },
+                    { "type": "file", "value": "router.tsx" },
+                    { "type": "file", "value": "providers.tsx" }
+                  ]
+                },
+                {
+                  "type": "folder",
+                  "value": "features",
+                  "children": [
+                    {
+                      "type": "folder",
+                      "value": "onboarding",
+                      "children": [
+                        {
+                          "type": "folder",
+                          "value": "pages",
+                          "children": [
+                            { "type": "file", "value": "LandingPage.tsx" }
+                          ]
+                        },
+                        {
+                          "type": "folder",
+                          "value": "components",
+                          "children": [
+                            { "type": "file", "value": "CandidateForm.tsx" },
+                            { "type": "file", "value": "ResumeUpload.tsx" }
+                          ]
+                        },
+                        {
+                          "type": "folder",
+                          "value": "api",
+                          "children": [
+                            { "type": "file", "value": "onboardingApi.ts" }
+                          ]
+                        },
+                        {
+                          "type": "folder",
+                          "value": "hooks",
+                          "children": [
+                            {
+                              "type": "file",
+                              "value": "useRegisterCandidate.ts"
+                            }
+                          ]
+                        },
+                        { "type": "file", "value": "types.ts" }
+                      ]
+                    },
+                    {
+                      "type": "folder",
+                      "value": "dashboard",
+                      "children": [
+                        {
+                          "type": "folder",
+                          "value": "pages",
+                          "children": [
+                            { "type": "file", "value": "DashboardPage.tsx" }
+                          ]
+                        },
+                        {
+                          "type": "folder",
+                          "value": "components",
+                          "children": [
+                            {
+                              "type": "file",
+                              "value": "PipelineTriggerButton.tsx"
+                            }
+                          ]
+                        },
+                        {
+                          "type": "folder",
+                          "value": "api",
+                          "children": [
+                            { "type": "file", "value": "pipelineApi.ts" }
+                          ]
+                        },
+                        {
+                          "type": "folder",
+                          "value": "hooks",
+                          "children": [
+                            { "type": "file", "value": "useRunPipeline.ts" }
+                          ]
+                        },
+                        { "type": "file", "value": "types.ts" }
+                      ]
+                    }
+                  ]
+                },
+                {
+                  "type": "folder",
+                  "value": "shared",
+                  "children": [
+                    {
+                      "type": "folder",
+                      "value": "components",
+                      "children": [
+                        { "type": "file", "value": "Button.tsx" },
+                        { "type": "file", "value": "Input.tsx" }
+                      ]
+                    },
+                    {
+                      "type": "folder",
+                      "value": "utils",
+                      "children": [{ "type": "file", "value": "apiClient.ts" }]
+                    }
+                  ]
+                },
+                {
+                  "type": "folder",
+                  "value": "styles",
+                  "children": [{ "type": "file", "value": "global.css" }]
+                },
+                { "type": "file", "value": "main.tsx" }
+              ]
+            },
+            { "type": "file", "value": "package.json" },
+            { "type": "file", "value": "tsconfig.json" },
+            { "type": "file", "value": "vite.config.ts" }
+          ]
         }
       ]
     },
-
     {
       "type": "folder",
       "value": "domain",
@@ -91,7 +222,6 @@
         { "type": "file", "value": "exceptions.py" }
       ]
     },
-
     {
       "type": "folder",
       "value": "ai",
@@ -129,7 +259,6 @@
         }
       ]
     },
-
     {
       "type": "folder",
       "value": "database",
@@ -152,7 +281,6 @@
         { "type": "file", "value": "session.py" }
       ]
     },
-
     {
       "type": "folder",
       "value": "infrastructure",
@@ -199,7 +327,6 @@
         }
       ]
     },
-
     {
       "type": "folder",
       "value": "observability",
@@ -209,9 +336,52 @@
         { "type": "file", "value": "alerts.py" }
       ]
     },
-
-    { "type": "folder", "value": "terraform", "children": [] },
-
+    {
+      "type": "folder",
+      "value": "terraform",
+      "children": [
+        {
+          "type": "folder",
+          "value": "environments",
+          "children": [
+            {
+              "type": "folder",
+              "value": "dev",
+              "children": [
+                { "type": "file", "value": "dev.tfvars" },
+                { "type": "file", "value": "main.tf" },
+                { "type": "file", "value": "provider.tf" },
+                { "type": "file", "value": "variables.tf" }
+              ]
+            },
+            {
+              "type": "folder",
+              "value": "prod",
+              "children": [
+                { "type": "file", "value": "main.tf" },
+                { "type": "file", "value": "provider.tf" },
+                { "type": "file", "value": "variables.tf" }
+              ]
+            }
+          ]
+        },
+        {
+          "type": "folder",
+          "value": "modules",
+          "children": [
+            {
+              "type": "folder",
+              "value": "gcp-skillvector",
+              "children": [
+                { "type": "file", "value": "main.tf" },
+                { "type": "file", "value": "outputs.tf" },
+                { "type": "file", "value": "variables.tf" }
+              ]
+            }
+          ]
+        }
+      ]
+    },
     {
       "type": "folder",
       "value": "scripts",
@@ -220,7 +390,6 @@
         { "type": "file", "value": "migrate.sh" }
       ]
     },
-
     {
       "type": "folder",
       "value": "tests",
@@ -230,7 +399,6 @@
         { "type": "folder", "value": "e2e", "children": [] }
       ]
     },
-
     {
       "type": "folder",
       "value": "docker",
@@ -239,7 +407,6 @@
         { "type": "file", "value": "docker-compose.yml" }
       ]
     },
-
     {
       "type": "folder",
       "value": ".github",
@@ -254,7 +421,6 @@
         }
       ]
     },
-
     { "type": "file", "value": "pyproject.toml" },
     { "type": "file", "value": "Makefile" },
     { "type": "file", "value": "README.md" }
